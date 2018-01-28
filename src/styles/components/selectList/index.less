@@ -1,0 +1,55 @@
+.ej-form__selectlist{
+    position: relative;
+
+    font-size: @ej-font-size-form-input;
+    color: @ej-color-text-gray;
+}
+.ej-form__selectlist-input{
+    display: none;
+}
+
+.ej-form__selectlist-indicator{
+    position: relative;
+    font-size: 17px;
+    color: #000;
+    word-break: break-all;
+    line-height: 1;
+    padding-right: 20px;
+    &:after{
+        @color: currentColor;
+        .mixin-icon-triangle('bottom', 14px, 6px, @color);
+        content: '';
+        right: 0;
+        left: auto;
+        bottom: auto;
+        top: 50%;
+        margin-top: -3px;
+    }
+}
+
+.ej-form__selectlist-list{
+    display: none;
+    padding-top: 10px;
+
+    // padding: 18px;
+
+    .ej-form__radio-label .ej-form__radio-text{
+        display: inline;
+    }
+}
+.ej-form__selectlist-list--show{
+    display: block;
+    // z-index: 2;
+    // position: absolute;
+    // top: 32px;
+    // left: 0;
+    // background: #fff;
+    // border: 1px solid @ej-color-primary;
+}
+.ej-form__selectlist-option{
+    word-break: break-all;
+    font-size: 17px;
+    color: #000;
+    line-height: 1;
+    padding: 5px 0;
+}

@@ -1,0 +1,44 @@
+// @import "../../enjoy-ui/main.less";
+
+.accounts{
+    background-color: #fff;
+    margin: 0 25px;
+    padding: 10px @ej-space-list-left;
+    border-radius: 15px;
+    box-shadow: 0 1px 10px rgba(0,0,0,.1);
+}
+.accounts__item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 82px;
+    padding: 0 10px;
+
+    &:after{
+        .mixin-hairline('bottom');
+    }
+
+    &:last-child{
+        &:after{
+            display: none;
+        }
+    }
+}
+.accounts__item-header{
+    width: 100px;
+    color: @ej-color-text-dark;
+    font-size: 26px;
+}
+.accounts__item-footer{
+    flex: 1;
+    text-align: right;
+}
+.accounts__item-token{
+    color: @ej-color-text-dark;
+    font-size: 15px;
+}
+.accounts__item-rmb{
+    margin-top: 5px;
+    color: @ej-color-primary;
+    font-size: 11px;
+}

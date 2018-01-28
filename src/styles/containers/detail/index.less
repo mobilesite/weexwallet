@@ -1,0 +1,208 @@
+.ej-page--detail{
+    padding-bottom: 50px;
+    color: #333;
+    .ej-navbar{
+        background: #27314c;
+    }
+}
+
+.detail-header{
+    display: block;
+    width: 100%;
+}
+
+.detail-main{
+    position: relative;
+    z-index: 1;
+    margin-top: -20px;
+    border-radius: 15px 15px 0 0;
+    background-color: #fff;
+    padding: 28px 15px;
+}
+
+.detail-overview__header{
+    font-size: 13px;
+    line-height: 20px;
+}
+.detail-overview__data{
+    margin-top: 36px;
+    background-color: #F8F8F8;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    padding: 12px 5px 16px;
+}
+.detail-overview__data-item{
+    .mixin-hairline('left');
+    &:first-child{
+        &:before{
+            display: none;
+        }
+    }
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.detail-overview__data-label{
+    font-size: 22px;
+}
+.detail-overview__data-value{
+    margin-top: 2px;
+    font-size: 13px;
+    color: @ej-color-text-gray;
+}
+
+.detail-overview__address{
+    margin-top: 16px;
+    padding-bottom: 5px;
+}
+.detail-overview__address-item{
+    margin-bottom: 14px;
+}
+.detail-overview__address-label{
+    font-size: 14px;
+    color: #353535;
+}
+.detail-overview__address-value{
+    .mixin-gradient(#F4F7FF, #FBFCFF, 85deg);
+    margin-top: 9px;
+    font-size: 14px;
+    color: @ej-color-primary;
+    padding: 11px 14px;
+    border-radius: 9px;
+    word-break: break-all;
+}
+
+.detail-brief{
+    .mixin-hairline('top');
+    position: relative;
+    padding-top: 22px;
+    padding-bottom: 30px;
+}
+.detail-brief__title{
+    padding-bottom: 18px;
+    font-size: 15px;
+}
+// .detail-brief__list{
+//     .mixin-clearfix();
+// }
+.detail-brief__item{
+    margin-left: 20px;
+    display: inline;
+    font-size: 13px;
+    line-height: 20px;
+    color: #353535;
+
+    &:first-child{
+        margin-left: 0;
+    }
+}
+
+.detail-rule{
+    .mixin-hairline('top');
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 15px;
+    color: #333;
+
+    &:after{
+        .mixin-icon-arrow('right', 6px, #999,  1px);
+        content: '';
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+}
+
+.detail-question{
+    .mixin-hairline('top');
+    position: relative;
+}
+.detail-question__title{
+    font-size: 15px;
+    padding-top: 24px;
+}
+.detail-question__list{
+    font-size: 14px;
+}
+.detail-question__item{
+
+}
+.detail-question__ask{
+    position: relative;
+    cursor: pointer;
+    padding: 20px 0;
+    .mixin-set-tap-color();
+
+    &:after{
+        .mixin-icon-arrow('bottom', 6px, #999,  1px);
+        content: '';
+        position: absolute;
+        top: 22px;
+        right: 2px;
+    }
+}
+.detail-question__item--active{
+    .detail-question__ask{
+        color: @ej-color-primary;
+        &:after{
+            .mixin-icon-arrow('top', 6px, #999,  1px);
+            content: '';
+            position: absolute;
+            top: 26px;
+            right: 0;
+        }
+    }
+
+    .detail-question__answer{
+        position: relative;
+        display: block;
+
+        &:before{
+            .mixin-icon-triangle('top', 18px, 10px, #F8F8F8);
+            content: '';
+            position: absolute;
+            top: -7px;
+            left: 14px;
+            margin-left: 0;
+        }
+    }
+}
+.detail-question__answer{
+    display: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background-color: #F8F8F8;
+    line-height: 21px;
+    color: @ej-color-text-light;
+}
+
+.detail-footer{
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    line-height: 50px;
+}
+.detail-footer__button{
+    flex: 1;
+    text-align: center;
+    color: #fff;
+
+    &:first-child{
+        .mixin-gradient(#FFAEAE, #FF7676, 135deg);
+    }
+
+    &:last-child{
+        .mixin-gradient(#839CFF, #B9CBFF, 45deg);
+    }
+}

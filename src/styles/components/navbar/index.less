@@ -1,0 +1,61 @@
+@import "../../enjoy-ui/main.less";
+
+@navbar-height: 45px;
+@navbarPrefixCls: ej-navbar;
+
+.ej-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: @navbar-height;
+    color: @ej-fill-base;
+}
+.ej-navbar__left,
+.ej-navbar__center,
+.ej-navbar__right {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ej-navbar__left {
+    padding-left: @ej-spacing-h-lg;
+    font-size: @ej-font-size-button-link;
+
+    .ej-navbar__left__icon {
+        margin-right: @ej-spacing-h-sm;
+        display: inherit;
+        width: 10px;
+        height: 18px;
+    }
+}
+
+.ej-navbar__title {
+    justify-content: center;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.ej-navbar__right {
+    justify-content: flex-end;
+    font-size: @ej-font-size-button-link;
+    margin-right: @ej-spacing-h-lg;
+}
+
+.ej-navbar--light {
+    background-color: @ej-fill-base;
+    color: @ej-color-primary;
+}
+
+.ej-navbar--light .ej-navbar__title {
+    color: @ej-color-text-base;
+}
+
+.ej-navbar--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}

@@ -1,0 +1,406 @@
+@import "./base.less";
+
+//page
+.ej-root {
+    height: 100%;
+}
+.ej-page {
+    height: 100%;
+    box-sizing: border-box;
+    color: @ej-color-text-dark;
+    overflow-y: auto;
+}
+.ej-page--has-navbar {
+    padding-top: @ej-height-navbar;
+}
+.ej-page--has-routerbar {
+    padding-bottom: @ej-height-routerbar;
+}
+.ej-page__content-title {
+    padding: 8px 0 18px;
+    color: #000;
+    font-size: 30px;
+}
+
+//btn
+.ej-button--primary,
+.ej-button--plain {
+    .mixin-user-select();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: @ej-height-large-btn;
+    color: @ej-color-btn-primary-font;
+    border-radius: @ej-radius-large-btn;
+    cursor: pointer;
+    &.disabled {
+        opacity: 0.65;
+    }
+}
+.ej-button--primary {
+    margin: 0 auto 20px;
+    width: 100%;
+    height: @ej-height-large-btn;
+    .mixin-gradient-short(@ej-color-btn-primary-bg-start, @ej-color-btn-primary-bg-end);
+    .mixin-set-tap-color();
+    box-shadow: @ej-shadow-large-btn;
+    color: @ej-color-btn-primary-font;
+    &:active {
+        .mixin-gradient-short(darken(@ej-color-btn-primary-bg-start, 5%), darken(@ej-color-btn-primary-bg-end, 5%));
+    }
+}
+.ej-button--plain {
+    color: darken(@ej-color-btn-plain-font, 5%);
+    background-color: @ej-color-btn-plain-bg;
+}
+
+//form
+.ej-form {
+    width: 100%;
+}
+.ej-form__row {
+    position: relative;
+    text-align: left;
+    .mixin-hairline("bottom");
+}
+//密码输入框
+.ej-form__row--password {
+    position: relative;
+    .ReactPasswordStrength {
+        border: none;
+        font-size: @ej-font-size-form-input;
+        color: @ej-color-text-gray;
+        display: flex;
+        align-items: center;
+        position: static;
+
+        input {
+            padding: 0;
+            flex: 1;
+            width: auto;
+        }
+
+        .ReactPasswordStrength-strength-desc {
+            padding: 0 0 0 10px;
+        }
+
+        .ReactPasswordStrength-strength-bar {
+            position: absolute;
+            top: auto;
+            width: auto;
+            bottom: 0;
+            right: auto;
+            width: 100%;
+            height: 1px;
+        }
+        .ReactPasswordStrength-strength-desc {
+            position: static;
+            font-style: normal;
+            width: auto;
+        }
+    }
+}
+.ej-form__label,
+.ej-form__input {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+.ej-form__label {
+    padding: 25px 0;
+}
+.ej-form__label-name {
+    margin-bottom: 11px;
+    display: block;
+    font-size: @ej-font-size-form-label;
+    font-weight: 500;
+    color: @ej-color-form-label;
+}
+.ej-form__input {
+    font-size: @ej-font-size-form-input;
+    color: @ej-color-form-input;
+}
+.ej-form__input-helper{
+    color: @ej-color-text-light;
+    font-size: 11px;
+}
+.ej-form__error {
+    font-size: 12px;
+    color: @ej-color-error;
+}
+
+.ej-form__input-half {
+    display: inline-block;
+    width: 50%;
+}
+.ej-form__input-wrap {
+    // .mixin-clearfix();
+    display: flex;
+    align-items: center;
+}
+.ej-form__input-unit {
+    color: @ej-color-text-gray;
+}
+.ej-form__footer {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.ej-form__checkbox{
+    position: relative;
+}
+.ej-form__checkbox-input{
+    display: none;
+}
+.ej-form__checkbox-text{
+    padding-right: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: @ej-font-size-form-label;
+    font-weight: 500;
+    color: @ej-color-form-label;
+    height: @ej-height-checkbox;
+    line-height: @ej-height-checkbox;
+}
+.ej-form__checkbox-track{
+    position: absolute;
+    top: 25px;
+    right: 0;
+    vertical-align: middle;
+    background: #666;
+    border-radius: 1000px;
+    transition: background-color .3s;
+    width: 50px;
+    margin-bottom: 0px;
+    height: @ej-height-checkbox;
+    box-shadow: 0 1px 5px 0 rgba(38, 44, 65, 0.4);
+
+    &:after{
+        content: '';
+        position: relative;
+        display: block;
+        background-color: #fff;
+        box-shadow: 0 1px 3px 0 rgba(38, 44, 65, 0.4);
+        border-radius: 1000px;
+        width: @ej-height-checkbox - 1;
+        height: @ej-height-checkbox - 1;
+        left: 0;
+        top: 0;
+        transition: transform .3s;
+        transform: translate3d(0,0,0);
+    }
+}
+
+/**
+.ej-form__checkbox-input:checked + .ej-form__checkbox-track{
+    background-color: @ej-color-primary;
+    box-shadow: 0 1px 5px 0 rgba(109, 130, 212, 0.2);
+    &:after{
+        transform: translate3d(50px-@ej-height-checkbox, 0, 0);
+    }
+}
+*/
+
+.ej-form__select {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    /* Prefixed box-sizing rules necessary for older browsers */
+    box-sizing: border-box;
+    /* Remove select styling */
+    appearance: none;
+    /* Font size must the 16px or larger to prevent iOS page zoom on focus */
+    /* General select styles: change as needed */
+    font-size: @ej-font-size-form-input;
+    color: @ej-color-form-input;
+    line-height: 1;
+}
+
+//modal
+.ej-modal {
+    display: none;
+    .mixin-fullscreen();
+    z-index: 1000;
+}
+.ej-modal--open {
+    display: block;
+}
+.ej-modal__mask {
+    background: @ej-color-modal-mask-bg;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.ej-modal__inner {
+    width: @ej-width-modal-inner;
+    position: relative;
+    background-color: @ej-color-modal-bg;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: @ej-radius-modal;
+}
+.ej-modal__header {
+    .mixin-hairline("bottom");
+    position: relative;
+    padding: 20px 15px;
+    font-size: 19px;
+}
+.ej-modal__body {
+    padding: 20px;
+    font-size: 15px;
+    line-height: 22px;
+    max-height: 320px;
+    overflow-y: auto;
+    color: @ej-color-text-dark;
+
+    .ej-form__row:last-child {
+        &:after {
+            display: none !important;
+        }
+    }
+}
+.ej-modal--confirm {
+    .ej-modal__body {
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+    }
+}
+/**
+.ej-modal__body > .ej-form {
+    margin-top: -20px;
+}
+*/
+.ej-modal__footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6%;
+    height: @ej-height-modal-footer;
+    line-height: @ej-height-modal-footer;
+    font-size: 17px;
+    .mixin-hairline("top");
+}
+.ej-modal__btn {
+    position: relative;
+    flex: 1;
+    color: @ej-color-modal-btn;
+    text-align: center;
+    .mixin-hairline("left");
+
+    &:first-child {
+        color: @ej-color-text-gray;
+        &:before {
+            display: none !important;
+        }
+    }
+}
+.ej-modal__btn--disabled {
+    opacity: 0.3;
+}
+
+//toast
+.ej-toast {
+    .mixin-fullscreen();
+    z-index: 1000;
+    background-color: @ej-color-toast-mask-bg;
+}
+
+.ej-toast__inner {
+    position: absolute;
+    max-width: 60%;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: block;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: @ej-color-toast-bg;
+    text-align: center;
+    color: @ej-color-toast-font;
+    font-size: 14px;
+    word-wrap: break-word;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    line-height: 1.2;
+}
+
+.ej-toast__inner-show {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.ej-toast__inner-hidden {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/**
+* transitions
+*/
+//slide-left
+.slide-left-enter-active,
+.slide-left-leave-active {
+    transition: all 0.5s ease;
+}
+.slide-left-enter,
+.slide-left-leave {
+    opacity: 0;
+}
+.slide-left-enter {
+    transform: translate3D(-100%, 0, 0);
+}
+.slide-left-leave {
+    transform: translate3D(100%, 0, 0);
+}
+
+//slide-right
+.slide-right-enter-active,
+.slide-right-leave-active {
+    transition: transform 0.5s ease;
+}
+.slide-right-enter,
+.slide-right-leave {
+    opacity: 0;
+}
+.slide-right-enter {
+    transform: translate3D(100%, 0, 0);
+}
+.slide-right-leave {
+    transform: translate3D(-100%, 0, 0);
+}
+
+@import "../components/button/index";
+@import "../components/icon/index";
+@import "../components/navbar/index";
+@import "../components/routerbar/index";
+@import "../components/modalLink/index";
+@import "../components/selectList/index";
+
+@import "../containers/layout/index";
+@import "../containers/feature/index";
+@import "../containers/createAccountModal/index";
+@import "../containers/welcome/index";
+@import "../containers/property/index";
+@import "../containers/accounts/index";
+@import "../containers/manage/index";
+@import "../containers/accountItem/index";
+@import "../containers/token/index";
+@import "../containers/my/index";
+@import "../containers/addressInfo/index";
+@import "../containers/detail/index";
+@import "../containers/join/index";
+@import "../containers/pay/index";
+@import "../containers/healthDemandsModal/index";
+@import "../containers/recharge/index";
+@import "../containers/send/index";
+@import "../containers/scan/index";
+@import "../containers/record/index";

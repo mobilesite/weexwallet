@@ -1,0 +1,99 @@
+.address-info {
+    .mixin-fullscreen();
+    opacity: 0;
+    transform: translate3D(100%, 0, 0);
+    transition: all 350ms;
+    z-index: 1000;
+    .mixin-gradient( #5772de, #889ef5, 180deg);
+
+    .address-info__copy {
+        position: relative;
+        margin-top: 24px;
+        font-size: 14px;
+        color: #fff !important;
+        background: none;
+        height: 45px;
+        line-height: 45px;
+
+        &:after {
+            .mixin-hairline("full", #fff);
+            border-radius: 45px;
+        }
+    }
+}
+.address-info--show {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+}
+.address-info__inner {
+    padding-top: @ej-height-navbar;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+.address-info__card-inner,
+.address-info__address,
+.address-info__copy {
+    margin: 0 auto;
+    width: 280px;
+}
+.address-info__copy{
+    text-align: center;
+    .mixin-hairline('all');
+
+    &:before{
+        border-radius: 45px!important;
+    }
+}
+.address-info__card {
+    position: relative;
+}
+.address-info__card-inner {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+.address-info__card-bg {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 100%;
+    padding-top: 45.87%;
+    height: 0;
+    background: url("../../../assets/images/property-bg.png") center center
+        no-repeat;
+    background-size: 100% 100%;
+}
+.address-info__figure {
+    display: block;
+    border-radius: 5px;
+    // margin: 42px 34px 13px;
+    svg {
+        @width: 280px;
+        width: @width;
+        height: @width;
+        border-radius: 5px;
+    }
+}
+.address-info__card-footer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.address-info__save {
+    flex: 1;
+    font-size: 16px;
+    color: #ff7576;
+    padding: 20px 0;
+    .mixin-set-tap-color();
+}
+.address-info__address {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+}

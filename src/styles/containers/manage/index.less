@@ -1,0 +1,26 @@
+
+@border-color: #D1DCFC;
+
+.ej-page--manage{
+    padding-bottom: 50px;
+}
+.manage__footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    padding: 0 15px;
+    background-color: #fff;
+
+    .mixin-hairline('top', @border-color);
+}
+.manage__footer-btn{
+    flex: 1;
+    position: relative;
+    border-radius: 0;
+
+    &:first-child{
+        .mixin-hairline('right', @border-color);
+    }
+}

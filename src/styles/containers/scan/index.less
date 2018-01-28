@@ -1,0 +1,41 @@
+.ej-page--scan{
+    @bg: #616161;
+    display: flex;
+    flex-direction: column;
+    padding-left: @ej-space-page-left;
+    padding-right: @ej-space-page-right;
+    background-color: @bg;
+
+    .ej-navbar{
+        background-color: @bg;
+    }
+}
+.scan-main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.scan-rect{
+    .mixin-hairline('all', #fff);
+    &:after{
+        z-index:1;
+    }
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 36px;
+    overflow: hidden;
+    img{
+        border: none;
+        background: #fff;
+    }
+}
+.scan-tip{
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+}
+.scan-footer__button{
+    background: #fff;
+}

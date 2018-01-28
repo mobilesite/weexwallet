@@ -1,0 +1,63 @@
+/**
+ * 生成三角形图标
+ * @direction   箭头朝向
+ * @width       箭头的宽
+ * @height      箭头的高
+ * @color       箭头颜色
+ */
+
+._add-triangle() {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+}
+
+.mixin-icon-triangle(@direction, @width, @height, @color)
+    when
+    (@direction = "top") {
+    ._add-triangle();
+    
+    border-width: 0 @width/2 @height;
+    border-color: transparent transparent @color transparent;
+    left: 50%;
+    top: -@height + 1px;
+    margin-left: -@width/2;
+}
+
+.mixin-icon-triangle(@direction, @width, @height, @color)
+    when
+    (@direction = "right") {
+    ._add-triangle();
+    
+    border-width: @height/2 0 @height/2 @width;
+    border-color: transparent transparent transparent @color;
+    right: -@width + 1px;
+    top: 50%;
+    margin-top: -@height/2;
+}
+
+.mixin-icon-triangle(@direction, @width, @height, @color)
+    when
+    (@direction = "bottom") {
+    ._add-triangle();
+    
+    border-width: @width/2 @height 0 @height;
+    border-color: @color transparent transparent transparent;
+    left: 50%;
+    bottom: -@height + 1px;
+    margin-left: -@width/2;
+}
+
+.mixin-icon-triangle(@direction, @width, @height, @color)
+    when
+    (@direction = "left") {
+    ._add-triangle();
+    
+    border-width: @height/2 @width @height/2 0;
+    border-color: transparent @color transparent transparent;
+    left: -@width + 1px;
+    top: 50%;
+    margin-top: -@height/2;
+}

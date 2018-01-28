@@ -1,0 +1,53 @@
+@control-btn-width: 50px;
+
+.account-item{
+    position: relative;
+    padding: @ej-space-list-left;
+
+    .mixin-hairline('bottom');
+}
+.account-item__header{
+    display: flex;
+    align-items: center;
+}
+.account-item__name{
+    .mixin-ellipsis-single-line();
+    flex: 1;
+    font-size: 19px;
+}
+.account-item__control{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.account-item__control-btn{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: @control-btn-width;
+    color: darken(@ej-color-primary, 5%);
+}
+.account-item__label{
+    padding-top: 10px;
+    @height: 20px;
+    display: block;
+    height: @height;
+    line-height: @height;
+}
+.account-item__info{
+    @height: 20px;
+    display: block;
+    line-height: @height;
+    word-wrap: break-word;
+    padding: 5px 0;
+}
+.account-item__footer{
+    margin-top: 15px;
+    display: flex;
+}
+.account-item__footer-btn{
+    flex: 1;
+    color: #000;
+}
